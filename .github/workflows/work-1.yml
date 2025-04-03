@@ -5,8 +5,8 @@ on:
       - ".github/workflows/**"
       - "src/**"
       - "build.gradle"
-      - ".github/workflows/Dockerfile"
-      - ".github/workflows/index.html"
+      - "Dockerfile"
+      - "index.html"
     branches:
       - main
 jobs:
@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: set lower case owner name
         run: |
-          echo "OWNER_LC=${OWNER}" >> ${GITHUB_ENV}
+          echo "OWNER_LC=${echo $OWNER | tr '[:upper:]' '[:lower:]'}" >> ${GITHUB_ENV}
         env:
           OWNER: "${{ github.repository_owner }}"
       - name: 빌드 앤 푸시
