@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: set lower case owner name
         run: |
-          echo "OWNER_LC=${OWNER,,}" >> ${GITHUB_ENV}
+          echo "OWNER_LC=${OWNER}" >> ${GITHUB_ENV}
         env:
           OWNER: "${{ github.repository_owner }}"
       - name: 빌드 앤 푸시
