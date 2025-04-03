@@ -5,8 +5,8 @@ on:
       - ".github/workflows/**"
       - "src/**"
       - "build.gradle"
-      - "DockerFile"
-      - "index.html"
+      - ".github/workflows/DockerFile"
+      - ".github/workflows/index.html"
     branches:
       - main
 jobs:
