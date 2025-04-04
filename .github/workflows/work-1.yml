@@ -58,7 +58,7 @@ jobs:
       - name: 빌드 앤 푸시
         uses: docker/build-push-action@v3
         with:
-          context: .github/workflows
+          context: .
           push: true
           tags: |
             ghcr.io/${{ env.OWNER_LC }}/deploy:${{ needs.makeTagAndRelease.outputs.tag_name }},
